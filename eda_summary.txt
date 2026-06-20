@@ -1,0 +1,240 @@
+ASTraM EVENT DATASET - COMPLETE EXPLORATORY DATA ANALYSIS
+- Source file: C:\Users\abhin\Downloads\Astram event data_anonymized - Astram event data_anonymizedb40ac87.csv
+- Report file: C:\Users\abhin\OneDrive\Documents\TrafficPulse\eda_summary.txt
+
+==============================================================================
+1. DATASET OVERVIEW
+==============================================================================
+- Shape: 8,173 rows x 46 columns
+- Total rows: 8,173
+- Total columns: 46
+- Duplicate full rows: 0
+- Duplicate IDs: 0
+
+==============================================================================
+2. COLUMNS AND INFERRED DATA TYPES
+==============================================================================
+- 01. id: str
+- 02. event_type: str
+- 03. latitude: float64
+- 04. longitude: float64
+- 05. endlatitude: float64
+- 06. endlongitude: float64
+- 07. address: str
+- 08. end_address: str
+- 09. event_cause: str
+- 10. requires_road_closure: bool
+- 11. start_datetime: datetime64[us, UTC]
+- 12. end_datetime: datetime64[us, UTC]
+- 13. status: str
+- 14. authenticated: str
+- 15. modified_datetime: str
+- 16. map_file: float64
+- 17. direction: str
+- 18. description: str
+- 19. veh_type: str
+- 20. veh_no: str
+- 21. corridor: str
+- 22. priority: str
+- 23. cargo_material: str
+- 24. reason_breakdown: str
+- 25. age_of_truck: float64
+- 26. created_date: str
+- 27. route_path: str
+- 28. client_id: int64
+- 29. created_by_id: str
+- 30. last_modified_by_id: str
+- 31. assigned_to_police_id: str
+- 32. citizen_accident_id: str
+- 33. comment: float64
+- 34. police_station: str
+- 35. meta_data: float64
+- 36. kgid: str
+- 37. resolved_at_address: str
+- 38. resolved_at_latitude: float64
+- 39. resolved_at_longitude: float64
+- 40. closed_by_id: str
+- 41. closed_datetime: str
+- 42. resolved_by_id: str
+- 43. resolved_datetime: str
+- 44. gba_identifier: str
+- 45. zone: str
+- 46. junction: str
+
+==============================================================================
+3. EVENT TYPE BREAKDOWN
+==============================================================================
+- unplanned: 7,706 events (94.3% of all events)
+- planned: 467 events (5.7% of all events)
+
+==============================================================================
+4. UTC DATETIME PARSING AND DATE COVERAGE
+==============================================================================
+- Parsing method: pandas mixed-format parsing with utc=True and errors='coerce'
+- start_datetime populated before parsing: 8,173
+- start_datetime successfully parsed: 8,173
+- start_datetime parse failures: 0
+- end_datetime populated before parsing: 490
+- end_datetime successfully parsed: 490
+- end_datetime parse failures among populated values: 0
+- Earliest start_datetime: 2023-11-09T19:24:48.154000+00:00
+- Latest start_datetime: 2024-04-08T17:11:42.780000+00:00
+- Human-readable date range: November 9, 2023 to April 8, 2024 (UTC)
+
+==============================================================================
+5. ROAD CLOSURE RATES
+==============================================================================
+- Overall: 676/8,173 (8.3%)
+- Closure field used: requires_road_closure
+
+Closure rate by event_type:
+- unplanned: 507/7,706 (6.6%)
+- planned: 169/467 (36.2%)
+
+Closure rate for the top 10 event causes by event count:
+- vehicle_breakdown: 210/4,896 (4.3%)
+- others: 55/638 (8.6%)
+- pot_holes: 13/537 (2.4%)
+- construction: 127/480 (26.5%)
+- water_logging: 39/458 (8.5%)
+- accident: 11/365 (3.0%)
+- tree_fall: 112/284 (39.4%)
+- road_conditions: 21/170 (12.4%)
+- congestion: 6/136 (4.4%)
+- public_event: 39/84 (46.4%)
+
+==============================================================================
+6. MISSING VALUES
+==============================================================================
+- Missing values by column (count and percentage):
+- id: 0 (0.00%)
+- event_type: 0 (0.00%)
+- latitude: 0 (0.00%)
+- longitude: 0 (0.00%)
+- endlatitude: 169 (2.07%)
+- endlongitude: 169 (2.07%)
+- address: 3 (0.04%)
+- end_address: 7,486 (91.59%)
+- event_cause: 0 (0.00%)
+- requires_road_closure: 0 (0.00%)
+- start_datetime: 0 (0.00%)
+- end_datetime: 7,683 (94.00%)
+- status: 0 (0.00%)
+- authenticated: 0 (0.00%)
+- modified_datetime: 0 (0.00%)
+- map_file: 8,173 (100.00%)
+- direction: 8,130 (99.47%)
+- description: 1,360 (16.64%)
+- veh_type: 3,286 (40.21%)
+- veh_no: 3,287 (40.22%)
+- corridor: 20 (0.24%)
+- priority: 2 (0.02%)
+- cargo_material: 7,897 (96.62%)
+- reason_breakdown: 7,897 (96.62%)
+- age_of_truck: 7,897 (96.62%)
+- created_date: 0 (0.00%)
+- route_path: 8,036 (98.32%)
+- client_id: 0 (0.00%)
+- created_by_id: 2 (0.02%)
+- last_modified_by_id: 3 (0.04%)
+- assigned_to_police_id: 8,045 (98.43%)
+- citizen_accident_id: 8,045 (98.43%)
+- comment: 8,173 (100.00%)
+- police_station: 0 (0.00%)
+- meta_data: 8,173 (100.00%)
+- kgid: 259 (3.17%)
+- resolved_at_address: 8,099 (99.09%)
+- resolved_at_latitude: 8,099 (99.09%)
+- resolved_at_longitude: 8,099 (99.09%)
+- closed_by_id: 5,032 (61.57%)
+- closed_datetime: 5,032 (61.57%)
+- resolved_by_id: 8,099 (99.09%)
+- resolved_datetime: 8,099 (99.09%)
+- gba_identifier: 4,729 (57.86%)
+- zone: 4,729 (57.86%)
+- junction: 5,663 (69.29%)
+
+==============================================================================
+7. NUMERIC SUMMARY STATISTICS
+==============================================================================
+                          count    mean     std    min    25%    50%    75%       max
+latitude              8,173.000  12.987   0.060 12.801 12.952 12.983 13.027    13.268
+longitude             8,173.000  77.596   0.061 77.309 77.557 77.589 77.626    77.769
+endlatitude           8,004.000   1.128   3.737  0.000  0.000  0.000  0.000    59.860
+endlongitude          8,004.000   6.678  21.761  0.000  0.000  0.000  0.000    80.721
+map_file                  0.000     NaN     NaN    NaN    NaN    NaN    NaN       NaN
+age_of_truck            276.000 235.518 634.060  0.000  5.000 10.000 15.000 2,026.000
+client_id             8,173.000   1.010   0.098  1.000  1.000  1.000  1.000     2.000
+comment                   0.000     NaN     NaN    NaN    NaN    NaN    NaN       NaN
+meta_data                 0.000     NaN     NaN    NaN    NaN    NaN    NaN       NaN
+resolved_at_latitude     74.000  13.003   0.091 12.842 12.948 12.984 13.020    13.257
+resolved_at_longitude    74.000  77.569   0.057 77.391 77.544 77.556 77.590    77.713
+
+==============================================================================
+8. CATEGORICAL AND BOOLEAN SUMMARY STATISTICS
+==============================================================================
+                      count unique                                                                                                                       top  freq
+id                     8173   8173                                                                                                                FKID000000     1
+event_type             8173      2                                                                                                                 unplanned  7706
+address                8170   3089                                    Outer Ring Road, Karthik Nagar, Marathahalli, Bengaluru, Karnataka. Pin-560037 (India)    88
+end_address             687    561                              Outer Ring Road, CQAE Staff Quarters, Yeshwanthpur, Bengaluru, Karnataka. Pin-560022 (India)     6
+event_cause            8173     17                                                                                                         vehicle_breakdown  4896
+requires_road_closure  8173      2                                                                                                                     False  7497
+status                 8173      3                                                                                                                    closed  7095
+authenticated          8173      2                                                                                                                       yes  7166
+modified_datetime      8173   8173                                                                                             2024-03-07 19:35:47.871698+00     1
+direction                43      8                                                                                                                south_west    12
+description            6813   5542                                                                                                          Starting problem    80
+veh_type               4887     10                                                                                                                  bmtc_bus  1466
+veh_no                 4886   4212                                                                                                               FKN00GL0784     7
+corridor               8153     22                                                                                                              Non-corridor  3124
+priority               8171      2                                                                                                                      High  5030
+cargo_material          276    138                                                                                                                     Goods    23
+reason_breakdown        276    193                                                                                                          Starting problem    22
+created_date           8173   8172                                                                                                    2023-06-29 04:05:46+00     2
+route_path              137     83                                                                                                                        []    51
+created_by_id          8171   1898                                                                                                                FKUSR00105   104
+last_modified_by_id    8170    304                                                                                                                FKUSR00001  7091
+assigned_to_police_id   128     62                                                                                                                FKUSR01441    52
+citizen_accident_id     128     77                                                                                                                FKUSR01442    52
+police_station         8173     54                                                                                                                 Yelahanka   377
+kgid                   7914   1853                                                                                                                FKKG000099   104
+resolved_at_address      74     58  Yeshwanthpura TTMC Bus Stand Road, Salarpuria Satva Luxuria, Malleshwaram West, Bengaluru, Karnataka. Pin-560055 (India)     8
+closed_by_id           3141   1225                                                                                                                FKUSR00105    54
+closed_datetime        3141   3141                                                                                             2024-01-30 04:56:03.281509+00     1
+resolved_by_id           74     42                                                                                                                FKUSR01665     8
+resolved_datetime        74     74                                                                                             2024-01-30 04:17:46.828355+00     1
+gba_identifier         3444      5                                                                                             Bengaluru Central Corporation   892
+zone                   3444     10                                                                                                            Central Zone 2   623
+junction               2510    294                                                                                                              MekhriCircle    64
+
+==============================================================================
+9. MONTHLY EVENT DISTRIBUTION
+==============================================================================
+- 2023-11: 984 events
+- 2023-12: 1,774 events
+- 2024-01: 1,468 events
+- 2024-02: 1,361 events
+- 2024-03: 1,958 events
+- 2024-04: 628 events
+
+==============================================================================
+10. DATA QUALITY NOTE
+==============================================================================
+- The supplied CSV is treated as the authoritative source.
+- Calculated closure rates are 36.2% for planned events and 6.6% for unplanned events.
+- These do not reproduce the battle plan's stated 35.3% planned and 4.3% unplanned rates.
+- No filtering or imputation was applied to force the expected rates.
+- Missing end_datetime values were retained as missing.
+
+==============================================================================
+11. VERIFICATION CHECKS
+==============================================================================
+- PASS: Exactly 8,173 rows analyzed
+- PASS: Exactly 46 columns loaded
+- PASS: All 8,173 start datetimes parsed
+- PASS: All 490 populated end datetimes parsed
+- PASS: Event-type row totals reconcile
+- PASS: Event-type closure totals reconcile
+- PASS: Planned count is 467
+- PASS: Unplanned count is 7,706

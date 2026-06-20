@@ -1,0 +1,9 @@
+pandas==2.2.0
+numpy==1.26.4
+scikit-learn==1.5.0
+networkx==3.4.2
+geohash2==1.1
+streamlit==1.58.0
+folium==0.20.0
+streamlit-folium==0.27.0
+pytest==8.2.2
