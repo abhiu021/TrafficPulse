@@ -54,24 +54,28 @@ st.markdown("""
 <style>
 /* ── palette ── */
 :root {
-    --bg:       #f8fafc;
-    --bg2:      #f1f5f9;
-    --card:     rgba(255,255,255,0.95);
-    --card2:    rgba(248,250,252,0.95);
-    --card-solid: #ffffff;
-    --border:   rgba(99,102,241,0.2);
-    --accent:   #6366f1;
-    --accent2:  #ec4899;
-    --accent-g: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
-    --green:    #10b981;
-    --amber:    #f59e0b;
-    --red:      #ef4444;
-    --txt:      #0f172a;
-    --sub:      #64748b;
-    --glass:    rgba(0,0,0,0.03);
+    --bg:       transparent;
+    --bg2:      transparent;
+    --card:     rgba(30,41,59,0.95);
+    --card2:    rgba(15,23,42,0.95);
+    --card-solid: #1e293b;
+    --border:   rgba(99,102,241,0.3);
+    --accent:   #818cf8;
+    --accent2:  #f472b6;
+    --accent-g: linear-gradient(135deg, #818cf8 0%, #f472b6 100%);
+    --green:    #34d399;
+    --amber:    #fbbf24;
+    --red:      #f87171;
+    --txt:      #f8fafc;
+    --sub:      #94a3b8;
+    --glass:    rgba(255,255,255,0.05);
     --radius:   16px;
 }
+</style>
+""", unsafe_allow_html=True)
 
+st.markdown("""
+<style>
 /* ── base ── */
 html, body, [class*="css"], [class*="st-"] { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
 [data-testid="stIconMaterial"], .material-symbols-rounded, .material-icons, i { font-family: 'Material Symbols Rounded', 'Material Icons' !important; }
@@ -82,6 +86,14 @@ html, body, [class*="css"], [class*="st-"] { font-family: 'Inter', -apple-system
     background-image:
         radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124,106,255,0.08), transparent),
         radial-gradient(ellipse 60% 40% at 80% 100%, rgba(255,107,138,0.05), transparent) !important;
+}
+
+/* ── text color fixes ── */
+p, span, label, input, li, [data-baseweb="menu"] div, li[role="option"] {
+    color: var(--txt) !important;
+}
+.stButton > button p, .stButton > button span {
+    color: #fff !important;
 }
 
 /* ── scrollbar ── */
@@ -99,8 +111,8 @@ html, body, [class*="css"], [class*="st-"] { font-family: 'Inter', -apple-system
 
 /* ── sidebar ── */
 section[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
-    border-right: 1px solid rgba(99,102,241,0.15) !important;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%) !important;
+    border-right: 1px solid var(--border) !important;
 }
 section[data-testid="stSidebar"] .stMarkdown h2,
 section[data-testid="stSidebar"] .stMarkdown h3 {
@@ -114,8 +126,8 @@ section[data-testid="stSidebar"] .stMarkdown h3 {
 section[data-testid="stSidebar"] .stSelectbox > div > div,
 section[data-testid="stSidebar"] .stDateInput > div > div,
 section[data-testid="stSidebar"] .stTimeInput > div > div {
-    background: rgba(255,255,255,0.9) !important;
-    border: 1px solid rgba(99,102,241,0.2) !important;
+    background: var(--card) !important;
+    border: 1px solid var(--border) !important;
     border-radius: 10px !important;
 }
 section[data-testid="stSidebar"] .stSlider > div > div > div {
